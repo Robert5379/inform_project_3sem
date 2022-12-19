@@ -38,6 +38,7 @@ def main(argv):
     color_next = (1.0, 0.0, 0.0)
     color_if_big_velocity=(1.0, 1.0, 1.0)
     color_background=(0.5, 0.5, 1)
+    color_cones=(1, 0, 1)
     picture_size_x=900
     picture_size_y = 900
     title="Dislocations"
@@ -73,6 +74,12 @@ def main(argv):
     property2.SetDiffuse(0.7)
     property2.SetSpecular(0.4)
     property2.SetSpecularPower(20)
+    
+    property3 = vtkProperty()
+    property3.SetColor(color_cones)
+    property3.SetDiffuse(0.7)
+    property3.SetSpecular(0.4)
+    property3.SetSpecularPower(20)
 
     #создание моделей конусов и шаров
     sphereActor1=[0]*n
@@ -102,7 +109,7 @@ def main(argv):
 
                 conActor[9 * i + 3 * j + z] = vtkActor()
                 conActor[9 * i + 3 * j + z].SetMapper(conMapper[9 * i + 3 * j + z])
-                conActor[9 * i + 3 * j + z].SetProperty(property2)
+                conActor[9 * i + 3 * j + z].SetProperty(property3)
                 conActor[9 * i + 3 * j + z].SetPosition(i + v1[9 * i + 3 * j + z]*dt / 2, j + v2[9 * i + 3 * j + z]*dt / 2,
                                                         z + v3[9 * i + 3 * j + z]*dt / 2)
 
