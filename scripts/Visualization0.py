@@ -11,7 +11,7 @@ from vtkmodules.vtkRenderingCore import (
 )
 
 
-def main(argv):
+def visualization:
     dims=[3, 3, 3]
     dt=1
     len_x=dims[0]
@@ -32,7 +32,7 @@ def main(argv):
     v2[0]=-7
     v3[0]=-1
 
-    conRadius=0.05
+    conRadius=0.02
     sphereRadius=0.06
     color_begin=(0.0, 0.0, 1.0)
     color_next = (1.0, 0.0, 0.0)
@@ -144,5 +144,4 @@ def main(argv):
     iren.Start()
 
 if __name__ == '__main__':
-    import sys
-    main(sys.argv)
+    visualization
